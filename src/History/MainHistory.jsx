@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
-import { getOrderById } from "../Redux/Actions/orderAction";
+import { getAllOrder } from "../Redux/Actions/orderAction";
 MainHistory.propTypes = {};
 
 function MainHistory() {
@@ -12,7 +12,7 @@ function MainHistory() {
     // Nếu đã có cookie đăng nhập từ server thì được phép lấy danh sách các order
     useEffect(() => {
         const fetchData = async () => {
-            const response = await getOrderById();
+            const response = await getAllOrder();
             console.log("respone:", response);
             setOrderList(response);
         };
